@@ -1,0 +1,299 @@
+<html><head><base href="." target="_blank"><title>Deez Links - Game Collection</title>
+<style>
+:root {
+  --primary: #1a1a1a;
+  --secondary: #333333;
+  --accent: #ff0000;
+  --bg: #222222;
+  --text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  text-shadow: 0 0 10px rgba(255,255,255,0.3),
+               0 0 20px rgba(255,255,255,0.2),
+               0 0 30px rgba(255,255,255,0.1);
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+.logo span {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(255,0,0,0.5),
+               0 0 20px rgba(255,0,0,0.3),
+               0 0 30px rgba(255,0,0,0.2);
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.category {
+  padding: 0.8rem 2rem;
+  background: var(--secondary);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3),
+               0 0 20px rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px rgba(255,255,255,0.1),
+              inset 0 0 10px rgba(255,255,255,0.1);
+}
+
+.category:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5),
+               0 0 20px rgba(255,255,255,0.3);
+  box-shadow: 0 0 20px rgba(255,0,0,0.3),
+              inset 0 0 15px rgba(255,255,255,0.2);
+}
+
+.search-bar {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.game-card {
+  background: var(--primary);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-img {
+  width: 100%;
+  height: 150px;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-img svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--accent);
+}
+
+.game-info {
+  padding: 1.5rem;
+}
+
+.game-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.game-desc {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.play-btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+  background: #cc0000;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo floating">Deez<span>Links</span></div>
+      <div class="categories">
+        <div class="category active" data-category="all">All</div>
+        <div class="category" data-category="racing">Racing</div>
+        <div class="category" data-category="classics">Classics</div>
+        <div class="category" data-category="fun">Fun</div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for games...">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="game-grid">
+      <div class="game-card" data-category="racing">
+        <div class="game-img">
+          <svg viewBox="0 0 24 24">
+            <path d="M21,6H3A2,2 0 0,0 1,8V16A2,2 0 0,0 3,18H21A2,2 0 0,0 23,16V8A2,2 0 0,0 21,6M21,16H3V8H21M6,15H8V13H10V11H8V9H6V11H4V13H6M14.5,12A1.5,1.5 0 0,1 16,13.5A1.5,1.5 0 0,1 14.5,15A1.5,1.5 0 0,1 13,13.5A1.5,1.5 0 0,1 14.5,12M18.5,9A1.5,1.5 0 0,1 20,10.5A1.5,1.5 0 0,1 18.5,12A1.5,1.5 0 0,1 17,10.5A1.5,1.5 0 0,1 18.5,9Z"></path>
+          </svg>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Drift Boss</h3>
+          <p class="game-desc">Race and drift through challenging tracks in this addictive driving game.</p>
+          <a href="https://www.crazygames.com/game/drift-boss" class="play-btn">Play Now</a>
+        </div>
+      </div>
+
+      <div class="game-card" data-category="classics">
+        <div class="game-img">
+          <svg viewBox="0 0 24 24">
+            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"></path>
+          </svg>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Geometry Dash</h3>
+          <p class="game-desc">Jumps through blocks and avoid spikes in this intense 2D Block Game</p>
+          <a href="https://innersloth.com/gameAmongUs.php" class="play-btn">Play Now</a>
+        </div>
+      </div>
+
+      <div class="game-card" data-category="classics">
+        <div class="game-img">
+          <svg viewBox="0 0 24 24">
+            <path d="M14.5,13.5H16.5V10.5H14.5M18.5,13.5H20.5V10.5H18.5M11,13.5H13V10.5H11M7,13.5H9V10.5H7M3,13.5H5V10.5H3M14.5,6.5H16.5V3.5H14.5M18.5,6.5H20.5V3.5H18.5M11,6.5H13V3.5H11M7,6.5H9V3.5H7M3,6.5H5V3.5H3M14.5,20.5H16.5V17.5H14.5M18.5,20.5H20.5V17.5H18.5M11,20.5H13V17.5H11M7,20.5H9V17.5H7M3,20.5H5V17.5H3Z"></path>
+          </svg>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Tetris</h3>
+          <p class="game-desc">Classic block-stacking puzzle game that never gets old.</p>
+          <a href="https://tetris.com" class="play-btn">Play Now</a>
+        </div>
+      </div>
+
+      <div class="game-card" data-category="fun">
+        <div class="game-img">
+          <svg viewBox="0 0 24 24">
+            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4C7.59,4 4,7.59 4,12C4,16.41 7.59,20 12,20C16.41,20 20,16.41 20,12C20,7.59 16.41,4 12,4M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"></path>
+          </svg>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">Fortnite</h3>
+          <p class="game-desc">Battle royale phenomenon with building mechanics.</p>
+          <a href="https://www.epicgames.com/fortnite" class="play-btn">Play Now</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+document.querySelector('.search-bar input').addEventListener('input', function(e) {
+  const searchTerm = e.target.value.toLowerCase();
+  const cards = document.querySelectorAll('.game-card');
+  
+  cards.forEach(card => {
+    const title = card.querySelector('.game-title').textContent.toLowerCase();
+    const desc = card.querySelector('.game-desc').textContent.toLowerCase();
+    
+    if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
+
+document.querySelectorAll('.category').forEach(category => {
+  category.addEventListener('click', function() {
+    document.querySelectorAll('.category').forEach(c => {
+      c.style.background = 'var(--secondary)';
+      c.classList.remove('active');
+    });
+    
+    this.classList.add('active');
+    this.style.background = 'var(--accent)';
+    
+    const selectedCategory = this.getAttribute('data-category');
+    const cards = document.querySelectorAll('.game-card');
+    
+    cards.forEach(card => {
+      if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Set "All" category as active by default
+document.querySelector('.category[data-category="all"]').click();
+</script>
+</body></html>
